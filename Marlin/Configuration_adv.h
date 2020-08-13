@@ -1523,7 +1523,7 @@
 // FSMC / SPI Graphical TFT
 //
 #if ENABLED(FSMC_GRAPHICAL_TFT)
-  #define LCD_SCREEN_ROT_180
+  //#define LCD_SCREEN_ROT_180
 
   #define LCD_PIXEL_WIDTH       128
   #define LCD_PIXEL_HEIGHT      64

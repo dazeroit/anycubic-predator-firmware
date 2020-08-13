@@ -73,7 +73,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Dazero.it, Predator STM)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Dazero.it, Predator)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -2359,6 +2359,12 @@
   #define BUTTON_DELAY_MENU 250 // (ms) Button repeat delay for menus
 
   //#define TOUCH_SCREEN_CALIBRATION
+
+  //#define XPT2046_X_CALIBRATION 12316
+  //#define XPT2046_Y_CALIBRATION -8981
+  //#define XPT2046_X_OFFSET        -43
+  //#define XPT2046_Y_OFFSET        257
+
 
   #define XPT2046_X_CALIBRATION 12316
   #define XPT2046_Y_CALIBRATION -8981

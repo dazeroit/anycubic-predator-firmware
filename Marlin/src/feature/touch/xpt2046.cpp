@@ -60,8 +60,10 @@
 #endif
 
 // Coordinates in terms of touch area
-#define BUTTON_AREA_TOP 175
-#define BUTTON_AREA_BOT 234
+//#define BUTTON_AREA_TOP 175
+//#define BUTTON_AREA_BOT 234
+#define BUTTON_AREA_TOP 0
+#define BUTTON_AREA_BOT 59
 
 #define SCREEN_START_TOP  ((LCD_PIXEL_OFFSET_Y) * (TOUCH_SCREEN_HEIGHT) / (LCD_FULL_PIXEL_HEIGHT))
 #define SCREEN_START_LEFT ((LCD_PIXEL_OFFSET_X) * (TOUCH_SCREEN_WIDTH) / (LCD_FULL_PIXEL_WIDTH))
@@ -127,10 +129,10 @@ uint8_t XPT2046::read_buttons() {
 
     // Touch within the button area simulates an encoder button
     if (y > BUTTON_AREA_TOP && y < BUTTON_AREA_BOT)
-      return WITHIN(x,  14,  77) ? EN_D
-          : WITHIN(x,  90, 153) ? EN_A
-          : WITHIN(x, 166, 229) ? EN_B
-          : WITHIN(x, 242, 305) ? EN_C
+      return WITHIN(x,  14,  77) ? EN_C
+          : WITHIN(x,  90, 153) ? EN_B
+          : WITHIN(x, 166, 229) ? EN_A
+          : WITHIN(x, 242, 305) ? EN_D
           : 0;
 
     if (x > TOUCH_SCREEN_WIDTH || !WITHIN(y, SCREEN_START_TOP, SCREEN_START_TOP + SCREEN_HEIGHT)) return 0;
