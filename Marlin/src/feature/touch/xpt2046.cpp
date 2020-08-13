@@ -52,8 +52,12 @@
  * and spans LCD_PIXEL_WIDTH/HEIGHT (scaled to SCREEN_WIDTH/HEIGHT).
  */
 // Touch screen resolution independent of display resolution
-#define TOUCH_SCREEN_HEIGHT 240
-#define TOUCH_SCREEN_WIDTH 320
+#ifndef TOUCH_SCREEN_HEIGHT
+  #define TOUCH_SCREEN_HEIGHT 240
+#endif
+#ifndef TOUCH_SCREEN_WIDTH
+  #define TOUCH_SCREEN_WIDTH 320
+#endif
 
 // Coordinates in terms of touch area
 #define BUTTON_AREA_TOP 175
