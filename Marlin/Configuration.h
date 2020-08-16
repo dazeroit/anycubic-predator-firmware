@@ -73,7 +73,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Dazero.it, Predator)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Dazero.it, Anycubic Predator)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -583,7 +583,8 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 750
+//#define EXTRUDE_MAXLENGTH 750
+#define EXTRUDE_MAXLENGTH 350
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -604,7 +605,7 @@
 
 #define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
 #define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
-#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
+//#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
 
 //===========================================================================
 //============================= Mechanical Settings =========================
@@ -664,17 +665,27 @@
   #define DELTA_DIAGONAL_ROD 440.0        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 437.21             // (mm) Get this value from G33 auto calibrate
+  //#define DELTA_HEIGHT 437.21             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 455.0            // (mm) Get this value from G33 auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ { -0.25, 0.0, -0.84 } // Get these values from G33 auto calibrate
+  //#define DELTA_ENDSTOP_ADJ { -0.25, 0.0, -0.84 } // Get these values from G33 auto calibrate
+  // Ex -0.84
+  // Ey -0.57
+  // Ez +0.00
+  #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 227.4              // (mm) Get this value from G33 auto calibrate
+  //#define DELTA_RADIUS 227.4              // (mm) Get this value from G33 auto calibrate
+  #define DELTA_RADIUS 227.0
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { +0.13, -0.18, +0.05 } // Get these values from G33 auto calibrate
+  //#define DELTA_TOWER_ANGLE_TRIM { +0.13, -0.18, +0.05 } // Get these values from G33 auto calibrate
+  // Tx -0.04
+  // Ty +0.13
+  // Tz -0.09
+  #define DELTA_TOWER_ANGLE_TRIM { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
   // Delta radius and diagonal rod adjustments (mm)
   //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
@@ -759,7 +770,7 @@
 //#define Z4_DRIVER_TYPE A4988
 //#define E0_DRIVER_TYPE A4988
 #define E1_DRIVER_TYPE A4988
-#define E2_DRIVER_TYPE A4988
+//#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
 //#define E4_DRIVER_TYPE A4988
 //#define E5_DRIVER_TYPE A4988
@@ -1096,7 +1107,8 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 0, -16.30 }
+//#define NOZZLE_TO_PROBE_OFFSET { 0, 0, -16.30 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, 0, -16.0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1382,7 +1394,7 @@
     #define MESH_TEST_HOTEND_TEMP  205    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
     #define MESH_TEST_BED_TEMP      60    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
     #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
-    #define G26_RETRACT_MULTIPLIER   1.0  // G26 Q (retraction) used by default between mesh test elements.
+    #define G26_RETRACT_MULTIPLIER   5.0  // G26 Q (retraction) used by default between mesh test elements.
   #endif
 
 #endif
@@ -1637,7 +1649,7 @@
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
-  #define NOZZLE_PARK_POINT { 0, 0, 400 }
+  #define NOZZLE_PARK_POINT { 0, 0, 20 }
   //#define NOZZLE_PARK_X_ONLY          // X move only is required to park
   //#define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
   #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
