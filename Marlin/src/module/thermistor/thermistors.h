@@ -192,6 +192,9 @@ typedef struct { int16_t value, celsius; } temp_entry_t;
 #if ANY_THERMISTOR_IS(1000) // Custom
   const temp_entry_t temptable_1000[] PROGMEM = { { 0, 0 } };
 #endif
+#if ANY_THERMISTOR_IS(5000)
+  #include "thermistor_5000.h"
+#endif
 
 #define _TT_NAME(_N) temptable_ ## _N
 #define TT_NAME(_N) _TT_NAME(_N)

@@ -142,5 +142,7 @@
   #define THERMISTOR_NAME "Dummy 2"
 #elif THERMISTOR_ID == 1000
   #define THERMISTOR_NAME "Custom"
+#elif THERMISTOR_ID == 5000
+  #define THERMISTOR_NAME "Custom Predator V6"
 
 #endif // THERMISTOR_ID
